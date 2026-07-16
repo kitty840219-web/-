@@ -844,10 +844,10 @@ ${activeFile.content}
   };
 
   return (
-    <div className="w-full bg-[#FAF8F5] rounded-3xl border border-[#7C5B8C]/15 shadow-sm overflow-hidden flex flex-col md:flex-row h-[780px]">
+    <div className="w-full bg-[#FAF8F5] rounded-3xl border border-[#7C5B8C]/15 shadow-sm overflow-hidden flex flex-col md:flex-row h-[900px] md:h-[820px]">
       
       {/* LEFT COMPANION & TAB SIDEBAR (Inspired by Image 1) */}
-      <div className="w-full md:w-64 bg-white border-r border-[#6D4E7B]/10 flex flex-col shrink-0 h-full font-sans">
+      <div className="w-full md:w-64 bg-white border-b md:border-b-0 md:border-r border-[#6D4E7B]/10 flex flex-col shrink-0 h-auto md:h-full font-sans">
         {/* Brand Banner */}
         <div className="p-5 border-b border-[#6D4E7B]/5 flex items-center gap-3 bg-[#FAF8F5]/30">
           <svg className="w-5 h-8 shrink-0 text-[#7C5B8C]" viewBox="0 0 24 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1061,17 +1061,17 @@ ${activeFile.content}
                       {/* Top Welcome Card with homeHeroBg and exact handwriting/serif text */}
                       <div className="bg-white border border-[#7C5B8C]/12 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 relative shadow-xs overflow-hidden h-[240px] md:h-[200px]">
                         {/* Overlay text content */}
-                        <div className="flex-1 z-10 text-left space-y-2">
-                          <span className="text-sm bg-[#FAF0E6] text-[#A0522D] px-2.5 py-0.5 rounded-full font-bold scale-95 inline-block">
+                        <div className="flex-1 z-10 text-left space-y-3">
+                          <span className="text-sm bg-[#FAF0E6] text-[#A0522D] px-3.5 py-1 rounded-full font-bold scale-95 inline-block">
                             ❤️ 讓 AI 陪你一起探索、思考、成長 ✨
                           </span>
-                          <h1 className="text-2xl md:text-3xl font-serif font-extrabold text-[#372D3E] tracking-tight leading-tight">
+                          <h1 className="text-3xl md:text-4xl font-serif font-extrabold text-[#372D3E] tracking-tight leading-tight">
                             下午好，Ivy 🌸
                           </h1>
-                          <h2 className="text-lg md:text-xl font-serif font-medium text-[#7C5B8C]">
+                          <h2 className="text-xl md:text-2xl font-serif font-medium text-[#7C5B8C]">
                             今天想聊些什麼呢？ ♡
                           </h2>
-                          <p className="text-xs text-[#5C4D66] font-medium leading-relaxed max-w-md">
+                          <p className="text-sm md:text-base text-[#5C4D66] font-medium leading-relaxed max-w-md">
                             讓艾飛樂的 AI 助理陪你一起探索、思考與成長，找到屬於你的答案。我們今天有 {activeCharacter} 與你相伴喔！✨
                           </p>
                         </div>
@@ -1089,12 +1089,12 @@ ${activeFile.content}
 
                       {/* "你可以試著問我..." section header */}
                       <div className="text-left">
-                        <span className="text-[12px] font-bold text-[#9A8AA6] tracking-widest block mb-3 uppercase">
+                        <span className="text-sm font-bold text-[#9A8AA6] tracking-widest block mb-4 uppercase">
                           ✨ 你可以試著問我...
                         </span>
                         
                         {/* 4x2 grid of custom styled suggestions */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           {[
                             { text: '我最近總是很焦慮，該怎麼調整？', icon: '💖', bg: 'bg-rose-50/70 hover:bg-rose-100/70 border-rose-100/60 text-rose-800' },
                             { text: '他對我的真實想法是什麼？', icon: '🌸', bg: 'bg-pink-50/70 hover:bg-pink-100/70 border-pink-100/60 text-pink-800' },
@@ -1111,7 +1111,7 @@ ${activeFile.content}
                                 setInputMessage(q.text);
                                 handleSendMessage(q.text);
                               }}
-                              className={`border rounded-2xl p-4 text-left text-xs font-semibold transition-all hover:shadow-sm cursor-pointer flex items-center gap-3 group ${q.bg}`}
+                              className={`border rounded-2xl p-5 text-left text-sm md:text-base font-semibold transition-all hover:shadow-sm cursor-pointer flex items-center gap-3.5 group ${q.bg}`}
                             >
                               <span className="text-lg group-hover:scale-110 transition-transform shrink-0">{q.icon}</span>
                               <span className="truncate flex-1">{q.text}</span>
@@ -1220,12 +1220,12 @@ ${activeFile.content}
                               onClick={() => {
                                 window.dispatchEvent(new CustomEvent('aifeiler-change-tab', { detail: f.tab }));
                               }}
-                              className="w-full p-2.5 hover:bg-[#FAF8F5] border border-transparent hover:border-[#7C5B8C]/10 rounded-xl transition-all text-left flex items-center gap-3 cursor-pointer group"
+                              className="w-full p-3.5 hover:bg-[#FAF8F5] border border-transparent hover:border-[#7C5B8C]/10 rounded-xl transition-all text-left flex items-center gap-3.5 cursor-pointer group"
                             >
-                              <span className="text-base group-hover:scale-110 transition-transform shrink-0">{f.icon}</span>
+                              <span className="text-lg group-hover:scale-110 transition-transform shrink-0">{f.icon}</span>
                               <div className="min-w-0">
-                                <span className="text-xs font-bold text-[#372D3E] block group-hover:text-[#7C5B8C] transition-colors">{f.name}</span>
-                                <span className="text-[10px] text-[#9A8AA6] block truncate">{f.desc}</span>
+                                <span className="text-sm font-bold text-[#372D3E] block group-hover:text-[#7C5B8C] transition-colors">{f.name}</span>
+                                <span className="text-xs text-[#9A8AA6] block truncate">{f.desc}</span>
                               </div>
                               <ChevronRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-[#7C5B8C] transition-colors ml-auto shrink-0" />
                             </button>
@@ -1257,29 +1257,29 @@ ${activeFile.content}
                   </div>
                 ) : (
                   // Dialog stream messages
-                  <div className="flex-1 space-y-4 mb-4">
+                  <div className="flex-1 space-y-5 mb-4">
                     {activeSession.messages.map((msg, idx) => (
                       <div 
                         key={msg.id || idx}
-                        className={`flex items-start gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
+                        className={`flex items-start gap-3.5 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
                       >
                         {/* Avatar */}
                         <div className="shrink-0">
                           {msg.role === 'user' ? (
-                            <div className="w-8 h-8 rounded-full bg-[#7C5B8C]/10 border border-[#7C5B8C]/35 flex items-center justify-center font-serif text-sm font-bold text-[#7C5B8C]">
+                            <div className="w-9 h-9 rounded-full bg-[#7C5B8C]/10 border border-[#7C5B8C]/35 flex items-center justify-center font-serif text-sm font-bold text-[#7C5B8C]">
                               旅
                             </div>
                           ) : (
-                            <div className="w-8 h-8 rounded-full bg-[#FAF0E6] border border-[#7C5B8C]/15 flex items-center justify-center font-serif text-sm font-bold text-[#7C5B8C]">
+                            <div className="w-9 h-9 rounded-full bg-[#FAF0E6] border border-[#7C5B8C]/15 flex items-center justify-center font-serif text-sm font-bold text-[#7C5B8C]">
                               {activeCharacter[1]}
                             </div>
                           )}
                         </div>
 
                         {/* Speech Bubble */}
-                        <div className={`max-w-[75%] rounded-2xl p-3.5 text-xs shadow-xs relative leading-relaxed ${
+                        <div className={`max-w-[80%] rounded-2xl p-4 md:p-5 text-sm md:text-base shadow-xs relative leading-relaxed ${
                           msg.role === 'user'
-                            ? 'bg-[#7C5B8C] text-white rounded-tr-none'
+                            ? 'bg-[#7C5B8C] text-white rounded-tr-none font-medium'
                             : 'bg-white border border-[#7C5B8C]/12 text-[#372D3E] rounded-tl-none'
                         }`}>
                           
@@ -1289,48 +1289,48 @@ ${activeFile.content}
                               key={i} 
                               src={url} 
                               alt="attached input" 
-                              className="max-w-xs rounded-lg mb-2 border border-slate-200" 
+                              className="max-w-xs rounded-lg mb-2.5 border border-slate-200" 
                               referrerPolicy="no-referrer"
                             />
                           ))}
-
+                          
                           {/* Doc attached indicator */}
                           {msg.docInfo && (
-                            <div className="flex items-center gap-2 p-2 bg-slate-50 border border-slate-100 rounded-lg mb-2 text-[#5C4D66]">
-                              <FileText className="w-4 h-4 text-emerald-500" />
-                              <div className="text-[10px]">
+                            <div className="flex items-center gap-2.5 p-3 bg-slate-50 border border-slate-100 rounded-xl mb-2.5 text-[#5C4D66]">
+                              <FileText className="w-5 h-5 text-emerald-500" />
+                              <div className="text-xs">
                                 <span className="font-bold block">{msg.docInfo.name}</span>
-                                <span className="text-[9px] text-gray-400">{msg.docInfo.size}</span>
+                                <span className="text-[10px] text-gray-400">{msg.docInfo.size}</span>
                               </div>
                             </div>
                           )}
 
                           {/* Fallback Warning block */}
                           {msg.fallback && (
-                            <div className="mb-2.5 p-2.5 bg-amber-50/70 border border-amber-200/60 rounded-xl text-[10px] text-amber-800 leading-normal flex items-start gap-1.5 font-sans font-medium">
+                            <div className="mb-3 p-3 bg-amber-50/70 border border-amber-200/60 rounded-xl text-xs text-amber-800 leading-normal flex items-start gap-2 font-sans font-medium">
                               <span className="shrink-0">⚠️</span>
                               <span>由於「{msg.originalModel || '選定模型'}」未配置或逾時，系統自動無縫為您備援切換至「{msg.provider}」({msg.model})。</span>
                             </div>
                           )}
 
                           {/* Message Body Text */}
-                          <div className="whitespace-pre-wrap">{msg.content}</div>
+                          <div className="whitespace-pre-wrap leading-relaxed select-text">{msg.content}</div>
 
                           {/* Search citation cards */}
                           {msg.citations && msg.citations.length > 0 && (
-                            <div className="mt-3 pt-3 border-t border-slate-100 space-y-2">
-                              <span className="text-[10px] font-bold text-slate-400 tracking-wide block">🌾 即時搜尋參考來源：</span>
-                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <div className="mt-3.5 pt-3.5 border-t border-slate-100 space-y-2.5">
+                              <span className="text-xs font-bold text-slate-400 tracking-wide block">🌾 即時搜尋參考來源：</span>
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                                 {msg.citations.map((cite, cIdx) => (
                                   <a 
                                     key={cIdx}
                                     href={cite.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="bg-[#FAF8F5]/80 hover:bg-[#FAF8F5] border border-[#7C5B8C]/10 hover:border-[#7C5B8C]/30 rounded-xl p-2 flex flex-col gap-1 transition-all"
+                                    className="bg-[#FAF8F5]/80 hover:bg-[#FAF8F5] border border-[#7C5B8C]/10 hover:border-[#7C5B8C]/30 rounded-xl p-2.5 flex flex-col gap-1.5 transition-all"
                                   >
-                                    <span className="font-bold text-[#372D3E] truncate hover:text-[#7C5B8C] text-[11px]">{cite.title}</span>
-                                    <div className="flex items-center justify-between text-[9px] text-gray-400">
+                                    <span className="font-bold text-[#372D3E] truncate hover:text-[#7C5B8C] text-xs md:text-sm">{cite.title}</span>
+                                    <div className="flex items-center justify-between text-[10px] text-gray-400">
                                       <span>{cite.siteName}</span>
                                       {cite.date && <span>{cite.date}</span>}
                                     </div>
@@ -1341,26 +1341,26 @@ ${activeFile.content}
                           )}
 
                           {/* Controls (Favorites, Share, Copy) */}
-                          <div className={`mt-2 flex items-center gap-2 text-[10px] ${msg.role === 'user' ? 'text-purple-200 justify-end' : 'text-slate-400'}`}>
+                          <div className={`mt-3 flex items-center gap-2.5 text-xs ${msg.role === 'user' ? 'text-purple-200 justify-end' : 'text-slate-400'}`}>
                             {msg.latencyMs && (
                               <span className="font-mono">{msg.provider} ({msg.latencyMs}ms)</span>
                             )}
                             <button 
                               onClick={() => handleToggleFavorite(msg)}
-                              className="hover:text-pink-500 transition-colors cursor-pointer"
+                              className="hover:text-pink-500 transition-colors cursor-pointer p-0.5"
                               title="收藏此回答"
                             >
-                              <Heart className={`w-3.5 h-3.5 ${favorites.some(f => f.id === msg.id) ? 'fill-pink-500 text-pink-500' : ''}`} />
+                              <Heart className={`w-4 h-4 ${favorites.some(f => f.id === msg.id) ? 'fill-pink-500 text-pink-500' : ''}`} />
                             </button>
                             <button 
                               onClick={() => {
                                 navigator.clipboard.writeText(msg.content);
                                 alert('已複製到剪貼簿！🌸');
                               }}
-                              className="hover:text-indigo-500 transition-colors cursor-pointer"
+                              className="hover:text-indigo-500 transition-colors cursor-pointer p-0.5"
                               title="複製文字"
                             >
-                              <Copy className="w-3.5 h-3.5" />
+                              <Copy className="w-4 h-4" />
                             </button>
                           </div>
                         </div>
@@ -2253,18 +2253,18 @@ ${activeFile.content}
                   </div>
 
                   {/* Grounding switch */}
-                  <label className="flex items-center gap-1.5 cursor-pointer hover:text-slate-800">
+                  <label className="flex items-center gap-1.5 cursor-pointer hover:text-slate-800 text-xs md:text-sm font-medium">
                     <input 
                       type="checkbox" 
                       checked={isSearchToggled} 
                       onChange={(e) => setIsSearchToggled(e.target.checked)}
-                      className="rounded text-[#7C5B8C]" 
+                      className="rounded text-[#7C5B8C] w-4 h-4" 
                     />
                     <span>網路搜尋 (Search)</span>
                   </label>
 
                   {/* Agent switch */}
-                  <label className="flex items-center gap-1.5 cursor-pointer hover:text-slate-800">
+                  <label className="flex items-center gap-1.5 cursor-pointer hover:text-slate-800 text-xs md:text-sm font-medium">
                     <input 
                       type="checkbox" 
                       checked={isAgentToggled} 
@@ -2272,19 +2272,19 @@ ${activeFile.content}
                         setIsAgentToggled(e.target.checked);
                         if (e.target.checked) setActiveSubTab('agents');
                       }}
-                      className="rounded text-purple-600" 
+                      className="rounded text-purple-600 w-4 h-4" 
                     />
                     <span className="text-purple-600 font-bold">Agent 模式</span>
                   </label>
                 </div>
 
                 {/* Model Selector Dropdown */}
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1.5 text-xs md:text-sm text-slate-500">
                   <span>模型：</span>
                   <select
                     value={selectedModel}
                     onChange={(e) => setSelectedModel(e.target.value as ModelType)}
-                    className="bg-white border border-[#7C5B8C]/15 rounded-lg py-1 px-1.5 text-xs text-slate-700 font-medium focus:outline-none"
+                    className="bg-white border border-[#7C5B8C]/15 rounded-lg py-1.5 px-2.5 text-xs md:text-sm text-slate-700 font-medium focus:outline-none cursor-pointer"
                   >
                     <option value="auto">🤖 系統自動選擇 (Auto)</option>
                     <option value="gemini">🌸 Google Gemini (預設)</option>
@@ -2295,7 +2295,7 @@ ${activeFile.content}
               </div>
 
               {/* Main chat typing box */}
-              <div className="flex gap-2">
+              <div className="flex gap-2.5">
                 <div className="flex-1 relative">
                   <input
                     type="text"
@@ -2303,31 +2303,31 @@ ${activeFile.content}
                     onChange={(e) => setInputMessage(e.target.value)}
                     onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
                     placeholder="輸入您的對話問題，或是透過左下角上傳圖片與文檔..."
-                    className="w-full bg-slate-50 hover:bg-slate-100/70 focus:bg-white border border-[#7C5B8C]/15 focus:border-[#7C5B8C]/40 rounded-2xl pl-4 pr-10 py-3 text-xs focus:outline-none transition-all"
+                    className="w-full bg-slate-50 hover:bg-slate-100/70 focus:bg-white border border-[#7C5B8C]/15 focus:border-[#7C5B8C]/40 rounded-2xl pl-4 pr-12 py-3.5 text-sm md:text-base focus:outline-none transition-all"
                   />
                   
                   {/* Microphone */}
                   <button 
                     onClick={toggleRecording}
-                    className={`absolute right-3 top-2.5 p-1 rounded-full cursor-pointer transition-colors ${
+                    className={`absolute right-4 top-3 p-1.5 rounded-full cursor-pointer transition-colors ${
                       isRecording ? 'bg-red-100 text-red-600 animate-pulse' : 'text-slate-400 hover:text-slate-600'
                     }`}
                     title="用語音輸入內容"
                   >
-                    {isRecording ? <MicOff className="w-4 h-4" /> : <Mic className="w-4 h-4" />}
+                    {isRecording ? <MicOff className="w-4.5 h-4.5" /> : <Mic className="w-4.5 h-4.5" />}
                   </button>
                 </div>
 
                 <button
                   onClick={() => handleSendMessage()}
                   disabled={!inputMessage.trim() && !attachedImage}
-                  className="py-3 px-5 bg-[#7C5B8C] hover:bg-[#6D4E7B] disabled:opacity-50 text-white rounded-2xl text-xs font-serif font-bold transition-all flex items-center justify-center gap-1 cursor-pointer shadow-sm shrink-0"
+                  className="py-3.5 px-6 bg-[#7C5B8C] hover:bg-[#6D4E7B] disabled:opacity-50 text-white rounded-2xl text-sm md:text-base font-serif font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm shrink-0"
                 >
                   <Send className="w-4 h-4 fill-white text-[#7C5B8C]" />
                 </button>
               </div>
 
-              <div className="text-[10px] text-gray-400 text-center">
+              <div className="text-xs text-gray-400 text-center leading-relaxed">
                 小艾會認真傾聽、溫柔陪伴，所有對話內容皆為嚴格加密，請安心分享您的心事。💛
               </div>
 
