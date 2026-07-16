@@ -1,0 +1,8 @@
+{
+  "name": "艾飛樂語錄數位平台",
+  "description": "在溫柔裡思考，在陪伴中成長。艾飛樂 Aifeiler 是一個結合語錄、遊戲、思辨與成長紀錄的療癒互動網站，陪你在生活裡，慢慢長出更好的自己。",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
