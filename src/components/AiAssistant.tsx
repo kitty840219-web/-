@@ -844,7 +844,7 @@ ${activeFile.content}
   };
 
   return (
-    <div className="w-full bg-[#FAF8F5] rounded-3xl border border-[#7C5B8C]/15 shadow-sm overflow-hidden flex flex-col md:flex-row h-[900px] md:h-[820px]">
+    <div className="w-full bg-[#FAF8F5] rounded-3xl border border-[#7C5B8C]/15 shadow-sm overflow-hidden flex flex-col md:flex-row h-[1050px] md:h-[850px]">
       
       {/* LEFT COMPANION & TAB SIDEBAR (Inspired by Image 1) */}
       <div className="w-full md:w-64 bg-white border-b md:border-b-0 md:border-r border-[#6D4E7B]/10 flex flex-col shrink-0 h-auto md:h-full font-sans">
@@ -1059,7 +1059,7 @@ ${activeFile.content}
                     <div className="lg:col-span-8 space-y-6">
                       
                       {/* Top Welcome Card with homeHeroBg and exact handwriting/serif text */}
-                      <div className="bg-white border border-[#7C5B8C]/12 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 relative shadow-xs overflow-hidden h-[240px] md:h-[200px]">
+                      <div className="bg-white border border-[#7C5B8C]/12 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 relative shadow-xs overflow-hidden h-auto min-h-[220px] md:h-[200px]">
                         {/* Overlay text content */}
                         <div className="flex-1 z-10 text-left space-y-3">
                           <span className="text-sm bg-[#FAF0E6] text-[#A0522D] px-3.5 py-1 rounded-full font-bold scale-95 inline-block">
@@ -1111,11 +1111,11 @@ ${activeFile.content}
                                 setInputMessage(q.text);
                                 handleSendMessage(q.text);
                               }}
-                              className={`border rounded-2xl p-5 text-left text-sm md:text-base font-semibold transition-all hover:shadow-sm cursor-pointer flex items-center gap-3.5 group ${q.bg}`}
+                              className={`border rounded-2xl p-4 md:p-5 text-left text-sm md:text-base font-semibold transition-all hover:shadow-sm cursor-pointer flex items-center gap-3 md:gap-3.5 group ${q.bg} whitespace-normal break-words`}
                             >
                               <span className="text-lg group-hover:scale-110 transition-transform shrink-0">{q.icon}</span>
-                              <span className="truncate flex-1">{q.text}</span>
-                              <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity ml-auto" />
+                              <span className="flex-1 leading-normal text-slate-800 text-xs sm:text-sm md:text-base">{q.text}</span>
+                              <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity ml-auto shrink-0" />
                             </button>
                           ))}
                         </div>

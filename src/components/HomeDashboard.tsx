@@ -305,17 +305,32 @@ export default function HomeDashboard({ setActiveTab, activeCharacter, onSelectC
       {/* 艾飛樂心靈放映室 (YouTube 頻道播放器) */}
       <AifeilerVideoCinema />
 
-      {/* 艾飛樂心靈 AI 助理 */}
+      {/* 艾飛樂心靈 AI 助理 (裝飾性外容器與淡入動畫) */}
       <motion.div
-        initial={{ opacity: 0, y: 15 }}
+        initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="w-full"
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="w-full p-2.5 sm:p-4 md:p-6 bg-gradient-to-tr from-[#7C5B8C]/8 via-transparent to-[#FAF0E6]/50 rounded-[32px] sm:rounded-[40px] border border-[#7C5B8C]/10 shadow-[0_12px_40px_rgba(124,91,140,0.05)] relative"
       >
-        <AiAssistant 
-          activeCharacter={activeCharacter} 
-          onSelectCharacter={onSelectCharacter}
-        />
+        {/* Decorative corner flora */}
+        <div className="absolute top-4 left-4 w-6 h-6 opacity-20 pointer-events-none text-[#7C5B8C]">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M12 2C12 2 10.5 8.5 4 12C10.5 15.5 12 22 12 22C12 22 13.5 15.5 20 12C13.5 8.5 12 2 12 2Z" />
+          </svg>
+        </div>
+        <div className="absolute bottom-4 right-4 w-6 h-6 opacity-20 pointer-events-none text-[#7C5B8C]">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M12 2C12 2 10.5 8.5 4 12C10.5 15.5 12 22 12 22C12 22 13.5 15.5 20 12C13.5 8.5 12 2 12 2Z" />
+          </svg>
+        </div>
+
+        {/* Inner shadow base */}
+        <div className="bg-[#FAF8F5]/40 rounded-[24px] sm:rounded-[32px] p-1 md:p-2 border border-[#7C5B8C]/5 shadow-inner">
+          <AiAssistant 
+            activeCharacter={activeCharacter} 
+            onSelectCharacter={onSelectCharacter}
+          />
+        </div>
       </motion.div>
       
       {/* 每日一語 | DAILY QUOTE MODULE */}
